@@ -1,0 +1,83 @@
+﻿<form class="clearfix home-content" role="form"
+      [formGroup]="homeContentForm">
+    <input class="home-long-url"
+           type="text"
+           [placeholder]="longUrl"
+           [formControl]="ctrlLongUrl"
+           [(ngModel)]="url.longUrl" />
+    <br /><br />
+    <input id="random"
+           name="choice"
+           type="radio"
+           [formControl]="ctrlRandom"
+           [(ngModel)]="url.aliasType"
+           value="random"
+           (change)="aliasTypeChange($event)">
+    <label class="home-alias-type-label" for="random">{{random}}</label>
+    <input id="custom"
+           name="choice"
+           type="radio"
+           [formControl]="ctrlCustom"
+           [(ngModel)]="url.aliasType"
+           value="custom"
+           (change)="aliasTypeChange($event)">
+    <label class="home-alias-type-label" for="custom">{{custom}}</label>
+    <br/>
+    <input type="text"
+           [placeholder]="customAlias"
+           [formControl]="ctrlCustomAlias"
+           [(ngModel)]="url.customAlias" />
+</form>
+
+<!--<form class="clearfix" role="form"
+      [formGroup]="detailContentForm">
+    <div class="due">DUE <br /> {{activeItem.dueDate}}</div>
+    <input class="detail-title"
+           [formControl]="ctrlName"
+           [readOnly]="readOnly"
+           [(ngModel)]="activeItem.name" />
+
+    <button type="button" class="btn btn-primary"
+            (click)="navigateToProject()">
+        Go to Project View <i aria-hidden="true" class="fa fa-long-arrow-right"></i>
+    </button>&nbsp;
+    <button *ngIf="followingItem" type="button" class="btn btn-info" [disabled]="readOnly"
+            (click)="unFollow()">
+        Unfollow <i aria-hidden="true" class="fa fa-eye"></i>
+    </button>
+    <button *ngIf="!followingItem" type="button" class="btn btn-info" [disabled]="readOnly"
+            (click)="follow()">
+        Follow <i aria-hidden="true" class="fa fa-eye"></i>
+    </button>&nbsp;
+    <button type="button" class="btn btn-info" [disabled]="readOnly">
+        OneNote <i aria-hidden="true" class="fa fa-eye"></i>
+    </button>
+
+    <div class="dropdown pull-right">
+        <button class="btn btn-grey dropdown-toggle" [disabled]="readOnly" type="button" data-toggle="dropdown">
+            <i aria-hidden="true" class="fa"
+               [class.fa-globe]="activeItem.visibility === 0"
+               [class.fa-lock]="activeItem.visibility === 1"
+               [class.fa-user]="activeItem.visibility === 2"></i>
+            {{activePermission}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu permission-menu">
+            <li *ngFor="let permission of projectPermissions; let i = index" (click)="setActivePermission(i)">
+                <i class="fa"
+                   aria-hidden="true"
+                   [class.fa-globe]="index === 0"
+                   [class.fa-lock]="index === 1"
+                   [class.fa-user]="index === 2"></i>
+                {{permission}}
+            </li>
+        </ul>
+    </div>
+
+    <br><br>
+    <label>Description</label>
+    <textarea rows="5" cols="45" placeholder="Start typing..."
+              [formControl]="ctrlDescription"
+              [readonly]="readOnly"
+              [(ngModel)]="activeItem.description"></textarea>
+</form>-->

@@ -6,7 +6,8 @@ import {
 }  from '@angular/core';
 import {
     FormGroup,
-    FormControl
+    FormControl,
+    Validators
 } from "@angular/forms";
 
 enableProdMode();
@@ -17,37 +18,33 @@ enableProdMode();
 })
 export class HomeContentComponent {
     public homeContentForm: FormGroup;
-    public ctrlRandom: FormControl;
-    public ctrlCustom: FormControl;
     public ctrlLongUrl: FormControl;
     public ctrlCustomAlias: FormControl;
-    public random: string;
     public custom: string;
     public longUrl: string;
+    public required: string;
+    public customVal: string;
     public customAlias: string;
     public submitText: string;
+    public formSubmitted: boolean;
     public url: any;
 
     constructor() {
-        this.random = 'Random alias';
-        this.custom = 'Custom alias';
+        this.custom = 'Custom alias (optional)';
         this.longUrl = 'Enter long URL to to TinyDan-fy.';
-        this.customAlias = 'May contain letters, numbers, and dashes.';
+        this.required = 'Required field.';
+        this.customVal = 'May contain letters, numbers, and dashes.';
         this.submitText = 'TinyDan-fy it!';
         this.url = {
-            aliasType: 'random',
             longUrl: '',
             customAlias: ''
         };
+        this.formSubmitted = false;
 
         // build the form
-        this.ctrlRandom = new FormControl('');
-        this.ctrlCustom = new FormControl('');
-        this.ctrlLongUrl = new FormControl('');
-        this.ctrlCustomAlias = new FormControl('');
+        this.ctrlLongUrl = new FormControl('', [Validators.required]);
+        this.ctrlCustomAlias = new FormControl('', [this.customAliasValidator]);
         this.homeContentForm = new FormGroup({
-            random: this.ctrlRandom,
-            custom: this.ctrlCustom,
             longUrl: this.ctrlLongUrl,
             customAlias: this.ctrlCustomAlias
         });
@@ -56,11 +53,22 @@ export class HomeContentComponent {
     public ngOnInit() {
     }
 
-    public aliasTypeChange(evt: any) {
-        const target: any = evt.target;
-        if (target.checked) {
-            this.url.aliasType = target.value;
-        }        
+    public customAliasValidator(fieldControl: FormControl) {
+        if (!fieldControl.value || fieldControl.value === '') {
+            return null;
+        }
+
+        const valRegEx: RegExp = /^[A-Za-z0-9\-\\]+$/g;
+        return fieldControl.value.toString().match(valRegEx) ? null : { invalid: true };
+    }
+
+    public onSubmit() {
+        this.formSubmitted = true;
+        if (!this.homeContentForm.valid) {
+            return;
+        }
+
+        alert('Form is valid');
     }
 }
 

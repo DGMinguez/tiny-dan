@@ -18,6 +18,7 @@ body {
 form input[type=text] {
     min-height: 30px;
     min-width: 250px;
+    padding: 5px;
 }
 
 label {
@@ -36,16 +37,37 @@ label {
     box-sizing: border-box;
 }
 
-.home-alias-type-label {
-    padding-right: 25px;
-}
-
 .home-content {
     padding: 50px;    
 }
 
+.home-content-error {
+    border: 1px solid red;    
+}
+
+.home-content-error-text {
+    color: red;    
+}
+
 .home-long-url {
     width: 500px;
+}
+
+.home-submit-btn {
+    background-color: #76c25f;
+    border: 2px solid #00295b;
+    border-radius: 0;
+    color: #00295b;
+    font-weight: 500;
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.home-submit-btn:hover {
+    background-color: #66d26f;
+    border: 2px solid black;
+    color: black;
 }
 
 .no-padding {
@@ -55,6 +77,7 @@ label {
 .sub-title-text {
     font-size: 8pt;
     padding-left: 60px;
+    color: #76c25f;
 }
 
 .tiny-dan {
@@ -64,15 +87,16 @@ label {
 
 .title-row {
     background-color: #00295b;
-    color: #76c25f;
+    color: #00295b;
     height: 80px;
     padding: 10px;
 }
 
 .title-text {
-    font-size: 24pt;
+    font-size: 26pt;
     font-weight: bold;
     padding-left: 20px;
+    text-shadow: 1px 0 0 #76c25f, 0 -1px 0 #76c25f, 0 1px 0 #76c25f, -1px 0 0 #76c25f;
 }
 
 ::-webkit-input-placeholder {

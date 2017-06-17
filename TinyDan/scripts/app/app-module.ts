@@ -14,6 +14,10 @@ import { HomeModule } from '../home/home-module';
 // Routes
 import { APP_ROUTER_PROVIDERS } from './app.routes';
 
+// Services
+import { AppEvents }            from './app-events';
+import { AppObservableService } from './app-observable-service';
+
 // Components
 import { AppComponent } from './app.component';
 
@@ -27,6 +31,8 @@ import { AppComponent } from './app.component';
         HomeModule
     ],
     providers: [
+        AppEvents,
+        AppObservableService
     ],
     declarations: [
         AppComponent

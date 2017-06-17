@@ -7,10 +7,10 @@ export const HomeRoutes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home'
+        component: HomeComponent
     },
     {
         path: 'home',
-        component: HomeComponent
-    }    
+        redirectTo: '/'
+    }
 ];

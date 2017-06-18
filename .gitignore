@@ -241,4 +241,6 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /TinyDan/Properties/**
+/TinyDan/wwwroot/data
 /TinyDan/wwwroot/dist
+

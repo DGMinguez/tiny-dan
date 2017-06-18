@@ -98,8 +98,7 @@ module.exports = function webpackConfig() {
     // Add build specific plugins
     if (isProd) {
         config.plugins.push(
-            new webpack.NoErrorsPlugin(),
-            new webpack.optimize.DedupePlugin(),
+            new webpack.NoEmitOnErrorsPlugin(),
             new webpack.optimize.UglifyJsPlugin({
                 beautify: false,
                 comments: false,

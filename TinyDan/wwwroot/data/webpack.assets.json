@@ -1,12 +1,12 @@
 {
   "vendor": {
-    "js": "dist/vendor.js"
+    "js": "dist/vendor.b8be0da01169d81451d7.js"
   },
   "app": {
-    "js": "dist/app.js",
-    "css": "dist/site.css"
+    "js": "dist/app.b8be0da01169d81451d7.js",
+    "css": "dist/site.b8be0da01169d81451d7.css"
   },
   "polyfills": {
-    "js": "dist/polyfills.js"
+    "js": "dist/polyfills.b8be0da01169d81451d7.js"
   }
 }

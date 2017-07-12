@@ -1,0 +1,12 @@
+﻿{
+    "version": "1.0.0-*",
+
+    "dependencies": {
+        "TinyDan.Cache": "1.0.0-*",
+        "TinyDan.Model": "1.0.0-*"
+    },
+
+    "frameworks": {
+        "net452": {}
+    }
+}

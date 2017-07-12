@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinyDan</title>
+    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+    <base href="/">
+</head>
+<body>
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+          asp-fallback-href="/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="@ViewBag.SiteCss" rel="stylesheet" />
+
+    <app><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loading...</app>
+
+    <environment names="Development">
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </environment>
+
+    <script src="@ViewBag.PolyfillsScript"></script>
+    <script src="@ViewBag.VendorScript"></script>
+    <script src="@ViewBag.AppScript"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0-*",
+
+    "dependencies": {
+        "StackExchange.Redis": "1.2.3",
+        "TinyDan.Common": "1.0.0-*"
+    },
+
+    "frameworks": {
+        "net452": {}
+    }
+}

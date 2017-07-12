@@ -1,0 +1,12 @@
+{
+  "vendor": {
+    "js": "dist/vendor.js"
+  },
+  "app": {
+    "js": "dist/app.js",
+    "css": "dist/site.css"
+  },
+  "polyfills": {
+    "js": "dist/polyfills.js"
+  }
+}
